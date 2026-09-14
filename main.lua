@@ -1,6 +1,12 @@
 local mod = game.mod_runtime[game.current_mod]
 local prompts = require("./prompts")
 
+for item_id, choices in pairs(mod.external_prompts or {}) do
+    prompts[item_id] = choices
+end
+
+mod.prompts = prompts
+
 mod.inspect_item = function(params)
     local item = params.item
 
