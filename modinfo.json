@@ -2,7 +2,7 @@
   {
     "type": "MOD_INFO",
     "id": "lotus-inspectmod",
-    "name": "<color_red>Cataclysm Inspect</color>",
+    "name": "<color_red>Inspect</color>",
     "authors": [ "lotus-eaten" ],
     "description": "Adds a new use_action to the game. Enables prompts attached to an item id to be read on activation of the new use_action. See the github for instruction on how to add inspect to your favourite items!.",
     "category": "content",
