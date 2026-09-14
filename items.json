@@ -1,0 +1,10 @@
+[
+  {
+    "id": "inspect_example",
+    "type": "TOOL",
+    "name": { "str": "inspectable object" },
+    "description": "Example item for testing the Inspect action.",
+    "copy-from": "bodypillow",
+    "use_action": [ "INSPECT_ITEM" ]
+  }
+]
