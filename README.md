@@ -1,6 +1,7 @@
 # Cataclysm Inspect Mod
 
 DISCLAIMER: Designed for C:BN. I can't say if it works with DDA.
+
 This mod provides a new `USE_ACTION` to the game for displaying a random item-specific prompt as a non-vocal message. Basically, in the same way the Killer Drive trait has you tell yourself that you need to kill.
 
 ## How it works
