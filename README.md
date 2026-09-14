@@ -49,7 +49,7 @@ return {
     }
 }
 ```
-
+Remember to put [ "inspectmod" ] as a dependency for your mod so that it loads first.
 And you're done.
 
 # TODO:
