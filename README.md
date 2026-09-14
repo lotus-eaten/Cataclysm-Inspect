@@ -1,58 +1,80 @@
-# Cataclysm Inspect Mod
+Cataclysm Inspect Mod
 
-DISCLAIMER: Designed for C:BN. I can't say if it works with DDA.
+DISCLAIMER: Designed for C. I can't say if it works with DDA.
 
-This mod provides a new `USE_ACTION` to the game for displaying a random item-specific prompt as a non-vocal message. Basically, in the same way the Killer Drive trait has you tell yourself that you need to kill.
+This mod provides a new USE_ACTION to the game for displaying a random item-specific prompt as a non-vocal message. Basically, in the same way the Killer Drive trait has you tell yourself that you need to kill.
 
-## How it works
+How it works
 
-You can put it on anything. When an item using the `INSPECT_ITEM` use_action is activated, the Lua code:
+You can put INSPECT_ITEM on any item. When an item using the INSPECT_ITEM use_action is activated, the Lua code:
 
-1. Gets the item's unique ID.
-2. Uses that ID to parse the prompt category with the matching ID from `prompts.lua`.
-3. Chooses one prompt at random.
-4. Displays it with `gapi.add_msg()`.
+Gets the item's unique type ID.
+Uses that ID to find a matching prompt category.
+Chooses one prompt at random.
+Displays it with gapi.add_msg().
 
-These prompts are Lua strings instead of snippets, unlike newspaper or talking dolls.
+These prompts are Lua strings instead of snippets, unlike what newspapers or talking dolls use.
 
-## How to add Inspect to your item!
+# How to add Inspect functionality into your own mod
+"Cataclysm Pillow Talk", my follow-up mod, is the best example of this if you need a reference.
 
-Step 1: Add the use_action to your item's json:
+Step 1: Make Inspect a dependency:
 
-```
-"id": "fluffy_toy_inhaler,
-"use_action": [ "INSPECT_ITEM" ]
-```
+Make sure your mod's modinfo.json lists inspectmod as a dependency:
 
-Like any multi-use item, you can add it alongside other "use_action"s.
+{
+    "dependencies": [ "bn", "inspectmod" ]
+}
 
-```
-"id": "fluffy_toy_inhaler,
-"use_action": [ "INSPECT_ITEM", "PLAY_GAME", "INHALER" ]
-```
+Step 2: Create a prompts.lua, put your prompts there in the form of categories:
 
-Step 2: Add a prompt category in prompts.lua whose key exactly matches the item's type ID:
-
-```
 return {
-    your_item_id = {
-        "What I want to describe about the object.",
-        "Could be lore, relevant thoughts, tactile sensations or visuals."
-    },
-
     fluffy_toy_inhaler = {
         "The little manufacturing sticker comes off as you play with the inhaler in your hands.",
         "You wonder if you'll ever find yourself inhaling some strands of fluff when you least expect.",
         "...It'd probably be best to wash it often with how often you wind up with pink strands in your mouth.",
         "You give it a soft squeeze.",
         "It's absurdly pink."
+    },
+
+    another_item = {
+        "You examine it carefully.",
+        "You turn it over in your hands.",
+        "It feels familiar."
     }
 }
-```
-Remember to put [ "inspectmod" ] as a dependency for your mod so that it loads first.
-And you're done.
 
-# TODO:
+Step 3: Create a preload.lua:
+
+Preloading is necessary to share its prompts with Inspect.
+
+local inspect = game.mod_runtime["inspectmod"]
+local prompts = require("./prompts")
+
+if inspect and inspect.register_prompts then
+    for item_id, choices in pairs(prompts) do
+        inspect.register_prompts(item_id, choices)
+    end
+end
+
+This connects your mod to Inspect.
+You do not need to copy Inspect's main.lua, preload.lua, or prompts.lua into your own mod.
+
+Step 4: Add INSPECT_ITEM to your item
+
+For example:
+
+[
+    {
+        "id": "fluffy_toy_inhaler",
+        "type": "TOOL",
+        "name": { "str": "fluffy toy inhaler" },
+        "description": "A suspiciously fluffy inhaler.",
+        "use_action": [ "INSPECT_ITEM" ]
+    }
+]
+
+# TODO
 - Prompt rarities
 - Prompts locked behind favoriting the item
 - MAYBE an alternate INSPECT_ITEM called COMFORT, which allows you to do a less lewd version of VIBRATOR for morale bonuses.
