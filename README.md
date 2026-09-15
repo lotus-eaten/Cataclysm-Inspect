@@ -82,7 +82,7 @@ In the JSON with your item, for example:
 That's it.
 
 # TODO
-- Prompt rarities
-- Prompts locked behind favoriting the item
-- MAYBE an alternate INSPECT_ITEM called COMFORT, which allows you to do a less lewd version of VIBRATOR for morale bonuses.
+- Prompt rarities, so that certain messages are more common.
+- Prompts locked behind favoriting the item, so that certain messages only happen with items you've tangibly 'liked'.
+- MAYBE an alternate INSPECT_ITEM called COMFORT, which allows you to do a lewdless version of VIBRATOR for morale bonuses.
 - ...And perhaps an alternate of COMFORT called COMFORT_SELF which is a halfway between the two, for the more obviously lewd items.
