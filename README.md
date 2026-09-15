@@ -8,10 +8,10 @@ How it works
 
 You can put INSPECT_ITEM on any item. When an item using the INSPECT_ITEM use_action is activated, the Lua code:
 
-- Gets the item's unique type ID.
-- Uses that ID to find a matching prompt category.
-- Chooses one prompt at random.
-- Displays it with gapi.add_msg().
+1. Gets the item's unique type ID.
+2. Uses that ID to find a matching prompt category.
+3. Chooses one prompt at random.
+4. Displays it with gapi.add_msg().
 
 These prompts are Lua strings instead of snippets, unlike what newspapers or talking dolls use.
 
