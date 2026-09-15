@@ -28,7 +28,7 @@ Make sure it's listed in your mod's modinfo.json.
 }
 ```
 
-Step 2: Create a prompts.lua, put your prompts there in the form of categories:
+Step 2: Create a prompts.lua and put your prompts there in the form of categories, as below:
 
 ```
 return {
