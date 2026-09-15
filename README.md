@@ -50,7 +50,7 @@ return {
 
 Step 3: Create a preload.lua:
 
-You need to preload to share your mod's prompts with Inspect.
+You need to preload to share your mod's prompts with Inspect. Feel free to copy what's below.
 
 ```
 local inspect = game.mod_runtime["inspectmod"]
@@ -65,15 +65,15 @@ end
 
 Step 4: Add INSPECT_ITEM to your item
 
-For example:
+In the JSON with your item, for example:
 
 ```
 [
     {
-        "id": "fluffy_toy_inhaler",
-        "type": "TOOL",
-        "name": { "str": "fluffy toy inhaler" },
-        "description": "A suspiciously fluffy inhaler.",
+        "id": "your_item",
+        "type": "GENERIC",
+        "name": { "str": "your item" },
+        "description": "It's an item that belongs to you.",
         "use_action": [ "INSPECT_ITEM" ]
     }
 ]
