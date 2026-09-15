@@ -79,6 +79,8 @@ In the JSON with your item, for example:
 ]
 ```
 
+That's it.
+
 # TODO
 - Prompt rarities
 - Prompts locked behind favoriting the item
