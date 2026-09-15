@@ -20,7 +20,7 @@ These prompts are Lua strings instead of snippets, unlike what newspapers or tal
 
 Step 1: Make Inspect a dependency:
 
-Make sure your mod's modinfo.json lists inspectmod as a dependency:
+Make it's listed in your mod's modinfo.json.
 
 ```
 {
