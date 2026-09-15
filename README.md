@@ -4,7 +4,7 @@ DISCLAIMER: Designed for C:BN. I can't say if it works with DDA.
 
 This mod provides a new USE_ACTION to the game for displaying a random item-specific prompt as a non-vocal message. Basically, in the same way the Killer Drive trait has you tell yourself that you need to kill.
 
-How it works
+## How it works
 
 You can put INSPECT_ITEM on any item. When an item using the INSPECT_ITEM use_action is activated, the Lua code:
 
