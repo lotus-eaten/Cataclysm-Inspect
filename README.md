@@ -79,7 +79,7 @@ In the JSON with your item, for example:
 ]
 ```
 
-That's it.
+And after four easy steps, now you can Inspect!
 
 # TODO
 - Prompt rarities, so that certain messages are more common.
