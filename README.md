@@ -1,4 +1,4 @@
-# Cataclysm Inspect Mod
+# Cataclysm Inspect! Mod
 
 DISCLAIMER: Designed for C:BN. I can't say if it works with DDA.
 
