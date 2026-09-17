@@ -83,6 +83,6 @@ And after four easy steps, now you can Inspect!
 
 # TODO
 - Prompt rarities, so that certain messages are more common.
-- Prompts locked behind favoriting the item, so that certain messages only happen with items you've tangibly 'liked'.
+- Prompts locked behind favoriting the item, so that certain messages happen with items you're committed to.
 - MAYBE an alternate INSPECT_ITEM called COMFORT, which allows you to do a lewdless version of VIBRATOR for morale bonuses.
 - ...And perhaps an alternate of COMFORT called COMFORT_SELF which is a halfway between the two, for the more obviously lewd items.
